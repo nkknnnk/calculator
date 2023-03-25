@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div class="keypad">
+            <button onclick="clearResult()">C</button>
+            <button onclick="deleteChar()">CE</button>
+            <button onclick="insertChar('/')" class="operator">÷</button>
+            <button onclick="insertChar('*')" class="operator">×</button>
+            <button onclick="insertChar('7')">7</button>
+            <button onclick="insertChar('8')">8</button>
+            <button onclick="insertChar('9')">9</button>
+            <button onclick="insertChar('-')" class="operator">-</button>
+            <button onclick="insertChar('4')">4</button>
+            <button onclick="insertChar('5')">5</button>
+            <button onclick="insertChar('6')">6</button>
+            <button onclick="insertChar('+')" class="operator">+</button>
+            <button onclick="insertChar('1')">1</button>
+            <button onclick="insertChar('2')">2</button>
+            <button onclick="insertChar('3')">3</button>
+            <button onclick="calculate()" class="operator">=</button>
+            <button onclick="insertChar('0')">0</button>
+            <button onclick="insertChar('.')">.</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+
+        let result = document.getElementById("result");
+
+        function insertChar(char) {
+            result.value += char;
+        }
+
+        function deleteChar() {
+            result.value = result.value.slice(0, -1);
+        }
+
+        function clearResult() {
+            result.value = "";
+        }
+
+        function calculate() {
+            result.value = eval(result.value);
+        }
+
+    </script>
+</body>
+
+</html>
